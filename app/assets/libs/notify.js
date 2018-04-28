@@ -6,7 +6,7 @@ import type {RemoteMessage, Notification, NotificationOpen} from 'react-native-f
 const notify  = firebase.notifications;
 const message = firebase.messaging;
 
-export default class Notice {
+export default class Notify {
 
 	constructor() {
 
@@ -37,8 +37,13 @@ export default class Notice {
 				subtitle : 'Unknown subtitle',
 				body     : 'Unknown body',
 				sound    : 'default',
+				type     : false,
 				actions  : []
 			}
+		}
+
+		if ( data.type ) {
+			data.actions = await this.getActionByType(data.type);
 		}
 
 		const notification = new notify.Notification()
@@ -75,6 +80,22 @@ export default class Notice {
 
 	sendSchedule() {
 
+	}
+
+	static getActionByType(type) {
+
+		switch ( type ) {
+			case 'bet' : {
+				return [
+					new notify.Android.Action('bet', 'icon', 'title')
+						.setSemanticAction(notify.Android.SemanticAction.Reply)
+						.setShowUserInterface(true)
+						.addRemoteInput(new notify.Android.RemoteInput('value').setLabel('value'))
+				]
+			}
+		}
+
+		return [];
 	}
 
 	/**

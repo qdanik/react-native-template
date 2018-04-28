@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {StyleSheet, View, Text, TouchableHighlight, Image, ImageBackground} from 'react-native';
+import {StyleSheet, View, Text, TouchableHighlight, Image, ImageBackground, WebView} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
 import SiteLogo from '../../assets/images/logo.png';
@@ -27,6 +27,10 @@ class SignIn extends Component<any> {
 	}
 
 	_onGuest() {
+	}
+
+	onMessage(event) {
+		console.log('onMessage', event.nativeEvent.data);
 	}
 
 	render() {

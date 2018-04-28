@@ -1,8 +1,8 @@
 import {AppRegistry} from 'react-native';
 
 import App from './app/index';
-import BackgroundNotifications from './app/assets/libs/BackgroundNotifications';
+import notifyReceiver from './app/assets/libs/notifyReceiver';
 
 AppRegistry.registerComponent('templateRN', () => App);
 
-AppRegistry.registerHeadlessTask('RNFirebaseBackgroundMessage', BackgroundNotifications);
+AppRegistry.registerHeadlessTask('NotifyReceiver', notifyReceiver);
