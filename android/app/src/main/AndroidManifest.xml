@@ -1,10 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.qdanik.templatern"
-          android:versionCode="1"
-          android:versionName="1.0">
+          package="com.qdanik.templatern">
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
 
     <uses-sdk
@@ -27,6 +26,16 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+        <!--##########################################################################-->
+        <!--                               Notifications                              -->
+        <!--##########################################################################-->
+        <!--<meta-data android:name="com.google.firebase.messaging.default_notification_icon"-->
+                   <!--android:resource="@drawable/ic_stat_ic_notification"/>-->
+        <!--<meta-data android:name="com.google.firebase.messaging.default_notification_color"-->
+                   <!--android:resource="@color/colorAccent"/>-->
+        <!--<meta-data android:name="com.google.firebase.messaging.default_notification_channel_id"-->
+                   <!--android:value="@string/main"/>-->
 
         <service android:name="io.invertase.firebase.messaging.RNFirebaseInstanceIdService">
             <intent-filter>
