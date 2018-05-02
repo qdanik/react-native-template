@@ -5,4 +5,4 @@ import notifyReceiver from './app/assets/libs/notifyReceiver';
 
 AppRegistry.registerComponent('templateRN', () => App);
 
-AppRegistry.registerHeadlessTask('NotifyReceiver', notifyReceiver);
+AppRegistry.registerHeadlessTask('RNFirebaseBackgroundMessage', notifyReceiver);

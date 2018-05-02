@@ -10,6 +10,7 @@ export default {
 	//Notify
 	notify      : {
 		on        : async (notification: Notification) => {
+			console.log('######## notificationOnListener',);
 			await Notify.send({
 				id       : 'main',
 				title    : notification._title,
@@ -25,6 +26,7 @@ export default {
 			console.log('######## notificationOpen',);
 		},
 		initial   : (notificationOpen: NotificationOpen) => {
+			console.log('######## notificationInitialListener',);
 			if ( notificationOpen ) {
 				const {action, notification, results} = notificationOpen;
 			}
