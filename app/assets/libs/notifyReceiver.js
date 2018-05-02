@@ -1,7 +1,6 @@
 import firebase from 'react-native-firebase';
 
 import Notify from "./notify";
-import {Alert} from 'react-native';
 
 export default async (message) => {
 	// handle your message
@@ -16,5 +15,5 @@ export default async (message) => {
 		type  : type
 	});
 
-	return Promise.resolve();
+	return false;
 }
