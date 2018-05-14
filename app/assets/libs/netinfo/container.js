@@ -10,9 +10,6 @@ class NetInfoLib extends Component {
 	constructor(props) {
 		super(props);
 
-		this.handleListener = this.handleListener.bind(this);
-		this.getStatus      = this.getStatus.bind(this);
-
 		this.getStatus();
 		this.addListener();
 	}
@@ -20,7 +17,7 @@ class NetInfoLib extends Component {
 	handleListener(connectionInfo) {
 		const {changeType, changeEffectiveType} = this.props;
 
-		this.getStatus();
+		::this.getStatus();
 		changeType(connectionInfo.type);
 		changeEffectiveType(connectionInfo.effectiveType);
 	}
@@ -34,7 +31,7 @@ class NetInfoLib extends Component {
 	}
 
 	addListener() {
-		NetInfo.addEventListener('connectionChange', this.handleListener);
+		NetInfo.addEventListener('connectionChange', ::this.handleListener);
 	}
 
 	render = () => null;

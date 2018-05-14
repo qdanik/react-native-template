@@ -8,7 +8,7 @@ import rootReducer from "./reducers";
 const persistConfig = {
 	key       : 'root',
 	storage,
-	blacklist : ['navigation', 'webView']
+	blacklist : ['navigation']
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
