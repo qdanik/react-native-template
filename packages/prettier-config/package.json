@@ -4,6 +4,6 @@
   "description": "Shared Prettier configuration",
   "main": "./prettier-config.json",
   "peerDependencies": {
-      "prettier": "2.5.1"
+    "prettier": "2.5.1"
   }
 }

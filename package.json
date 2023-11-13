@@ -4,30 +4,16 @@
   "author": "Daniil Yankouski",
   "license": "MIT",
   "scripts": {
-    "check-format": "prettier '{,packages/**/}*.{md,js,ts,tsx,json}' --check",
-    "format": "prettier '{,packages/**/}*.{md,js,ts,tsx,json}' --write",
-    "lint": "lerna run lint --stream"
+    "lint": "lerna run lint --stream",
+    "prettier": "lerna run prettier --stream"
   },
   "workspaces": {
     "packages": [
       "packages/*"
     ]
   },
-  "dependencies": {
-    "react": "18.2.0",
-    "react-native": "0.72.6"
-  },
   "devDependencies": {
-    "eslint": "^8.53.0",
-    "jest": "^29.7.0",
-    "lerna": "^7.4.2",
-    "prettier": "^3.1.0",
-    "typescript": "5.2.2"
-  },
-  "resolutions": {
-    "@types/eslint": "^7.28.2",
-    "@types/node": "*",
-    "@types/react": "^18.0.24"
+    "lerna": "^7.4.2"
   },
   "engines": {
     "node": ">=18"
