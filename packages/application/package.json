@@ -3,16 +3,16 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "start": "react-native start",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
-    "start": "react-native start",
-    "lint": "eslint \"./{src}/**/*.{ts,tsx}\" --max-warnings 0",
-    "lint:fix": "eslint \"./{src}/**/*.{ts,tsx}\" --max-warnings 0 --fix",
+    "lint": "eslint './src/**/*.{ts,tsx}' --max-warnings 0",
+    "lint:fix": "eslint './src/**/*.{ts,tsx}' --max-warnings 0 --fix",
     "lint:perf": "TIMING=1 npm run eslint",
     "prettier": "prettier '{,packages/**/}*.{md,js,ts,tsx,json}' --check",
     "prettier:fix": "prettier '{,packages/**/}*.{md,js,ts,tsx,json}' --write",
     "tslint": "tsc --pretty --noEmit",
-    "test": "jest"
+    "test": "watchman watch-del-all && jest"
   },
   "dependencies": {
     "react": "18.2.0",
@@ -25,7 +25,11 @@
     "@react-native-template/eslint-config": "*",
     "@react-native-template/prettier-config": "*",
     "@react-native/metro-config": "^0.73.2",
+    "@swc/core": "^1.3.96",
+    "@swc/jest": "^0.2.29",
+    "@testing-library/react-native": "^12.3.3",
     "@tsconfig/react-native": "^3.0.2",
+    "@types/jest": "^29.5.8",
     "@types/react": "^18.2.37",
     "@types/react-test-renderer": "^18.0.6",
     "babel-jest": "^29.7.0",
