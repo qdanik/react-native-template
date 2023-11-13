@@ -1,1 +1,6 @@
-{}
+{
+  "ignore_dirs": [
+    "packages/MyApp/ios",
+    "packages/MyApp/android"
+  ]
+}
