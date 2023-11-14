@@ -1,16 +1,16 @@
 module.exports = {
   preset: 'react-native',
+  setupFiles: ['<rootDir>/jest/setup.js'],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'json'],
-  // setupFiles: ['./jestSetup.js'],
+  transform: {
+    '^.+/!((@)?react-native)/.+\\.(t|j)sx$': '@swc/jest',
+  },
   transformIgnorePatterns: [
     'node_modules/(?!(jest-)?react-native|@react-navigation|@react-native)',
   ],
   verbose: true,
-  collectCoverage: true,
-  coverageReporters: ['cobertura', 'lcov', 'html', 'text-summary'],
   reporters: ['default'],
+  collectCoverage: true,
   collectCoverageFrom: ['src/**/*.ts', 'src/**/*.tsx'],
-  transform: {
-    '^.+/!((@)?react-native)/.+\\.(t|j)sx$': '@swc/jest',
-  },
+  coverageReporters: ['cobertura', 'lcov', 'html', 'text-summary'],
 };
