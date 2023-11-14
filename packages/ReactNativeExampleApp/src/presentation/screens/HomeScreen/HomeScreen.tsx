@@ -1,20 +1,15 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { Button, Text, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { useStyles } from 'presentation/contexts';
 
 import { SCREENS, ScreensNavigationProp } from '../../../core';
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+import { createHomeStyles } from './HomeScreen.styles';
 
 export function HomeScreen() {
   const { t } = useTranslation();
+  const styles = useStyles(createHomeStyles);
   const navigation = useNavigation<ScreensNavigationProp>();
 
   return (
