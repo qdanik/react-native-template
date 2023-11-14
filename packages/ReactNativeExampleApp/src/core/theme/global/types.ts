@@ -1,5 +1,8 @@
 import { colors } from './colors';
+import { icons } from './icons';
 import { spacing } from './spacing';
+
+export type DefaultIcons = typeof icons;
 
 export type DefaultColors = typeof colors;
 

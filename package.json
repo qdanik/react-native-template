@@ -4,8 +4,12 @@
   "author": "Daniil Yankouski",
   "license": "MIT",
   "scripts": {
-    "lint": "lerna run lint --stream",
+    "bootstrap": "yarn flush && yarn pods",
+    "flush": "rm -rf node_modules && lerna clean --yes && yarn",
+    "flush:force": "rm -rf node_modules && rm yarn.lock && lerna clean --yes && yarn",
+    "pods": "lerna run pods --stream",
     "prettier": "lerna run prettier --stream",
+    "lint": "lerna run lint --stream",
     "test": "lerna run test --stream",
     "prepare": "husky install && chmod ug+x ./.husky/*",
     "postinstall": "lerna run postinstall --stream"
@@ -16,20 +20,28 @@
     ],
     "nohoist": [
       "**/react-native",
+      "**/react-*",
+      "**/@react-*",
+      "**/@react-*/**",
       "**/react-native/**"
     ]
   },
   "devDependencies": {
     "@commitlint/cli": "^18.4.1",
     "@commitlint/config-conventional": "^18.4.0",
-    "@react-native-template/prettier-config": "^1.0.0",
+    "@my-app/prettier-config": "^1.0.0",
     "husky": "^8.0.3",
     "lerna": "^7.4.2",
     "eslint": "^8.53.0",
-    "prettier": "^3.1.0",
+    "prettier": "3.0.3",
     "typescript": "^5.2.2"
   },
   "engines": {
     "node": ">=18"
+  },
+  "resolutions": {
+    "prettier": "3.0.3",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.1"
   }
 }

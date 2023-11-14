@@ -9,8 +9,9 @@ function withColor([x, y]: [number, number]) {
 
   return (txt: string) => {
     if (txt == null) return txt;
+    const txtHasClose = txt.indexOf(close) !== -1;
 
-    return open + (~`${txt}`.indexOf(close) ? txt.replace(rgx, close + open) : txt) + close;
+    return open + (txtHasClose ? txt.replace(rgx, close + open) : txt) + close;
   };
 }
 
@@ -27,8 +28,6 @@ export const consoleTransport: LoggerTransport = (level, message, metadata) => {
   const extra = Object.keys(metadata).length ? ` ${JSON.stringify(metadata, null, '  ')}` : '';
   const color = CONSOLE_COLORS[level];
 
-  // needed for stacktrace formatting
-  // eslint-disable-next-line no-console
   const log = level === LoggerLevels.Error ? console.error : console.log;
   const type = `[${level.toUpperCase()}]`;
 

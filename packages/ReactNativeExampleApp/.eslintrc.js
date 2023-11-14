@@ -3,18 +3,23 @@
  */
 const config = {
   root: true,
-  extends: '@react-native-template',
-  parserOptions: {
-    project: './tsconfig.json',
-    tsconfigRootDir: __dirname,
-    sourceType: 'module',
-    ecmaFeatures: {
-      experimentalObjectRestSpread: true,
-      legacyDecorators: true,
-      jsx: true,
+  extends: ['@my-app', '@react-native'],
+  overrides: [
+    {
+      files: ['*.ts', '*.tsx'],
+      parserOptions: {
+        project: './tsconfig.json',
+        tsconfigRootDir: __dirname,
+        sourceType: 'module',
+        ecmaFeatures: {
+          experimentalObjectRestSpread: true,
+          legacyDecorators: true,
+          jsx: true,
+        },
+        useJSXTextNode: true,
+      },
     },
-    useJSXTextNode: true,
-  },
+  ],
 };
 
 module.exports = config;

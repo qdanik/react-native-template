@@ -7,15 +7,9 @@
     "unused-imports"
   ],
   "extends": [
-    "@react-native",
     "airbnb",
-    "airbnb-typescript",
     "airbnb/hooks",
-    "plugin:import/typescript",
-    "plugin:react/recommended",
-    "plugin:prettier/recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:@typescript-eslint/recommended-requiring-type-checking"
+    "plugin:react/recommended"
   ],
   "env": {
     "es2021": true,
@@ -29,7 +23,22 @@
     "yarn.lock",
     "yarn-error.log"
   ],
+  "overrides": [
+    {
+      "files": [
+        "*.ts",
+        "*.tsx"
+      ],
+      "extends": [
+        "airbnb-typescript",
+        "plugin:import/typescript",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking"
+      ]
+    }
+  ],
   "rules": {
+    "indent": ["error", 2],
     "guard-for-in": "off",
     "import/extensions": "off",
     "import/no-cycle": "off",
@@ -84,7 +93,6 @@
       "error",
       "as-needed"
     ],
-    "prettier/prettier": "error",
     "react-hooks/exhaustive-deps": "warn",
     "react-hooks/rules-of-hooks": "error",
     "react/destructuring-assignment": "off",

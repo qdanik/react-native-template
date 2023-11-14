@@ -37,14 +37,20 @@ export const useThemeVariant = (): ThemeStyles => {
     [currentTheme?.fontPresets],
   );
 
+  const getIcons = useCallback(
+    () => merge(globalTheme?.icons, currentTheme?.icons),
+    [currentTheme?.icons],
+  );
+
   return useMemo(
     () => ({
+      getIcons,
       getColors,
       getSpacing,
       getFontNames,
       getFontPresets,
     }),
-    [getColors, getSpacing, getFontNames, getFontPresets],
+    [getIcons, getColors, getSpacing, getFontNames, getFontPresets],
   );
 };
 

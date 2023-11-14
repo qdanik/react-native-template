@@ -2,17 +2,17 @@ import { useCallback } from 'react';
 import { NativeEventEmitter } from 'react-native';
 
 export const useEventListener = <
-  Emmiter extends NativeEventEmitter,
-  ListenerParameters extends Parameters<Emmiter['addListener']>,
+  Emitter extends NativeEventEmitter,
+  ListenerParameters extends Parameters<Emitter['addListener']>,
   Params extends ListenerParameters[0],
   Callback extends ListenerParameters[1],
 >(
-  emitter: Emmiter,
+  emitter: Emitter,
   event: Params,
   callback: Callback,
   enabled = true,
-) => {
-  return useCallback(() => {
+) =>
+  useCallback(() => {
     if (!enabled) {
       return () => {};
     }
@@ -24,4 +24,3 @@ export const useEventListener = <
       }
     };
   }, [callback, emitter, enabled, event]);
-};

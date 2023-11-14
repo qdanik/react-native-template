@@ -16,8 +16,8 @@ export type ScreenOptions = {
 export const useScreenHeaderTitle = (
   screenOptions: NativeStackNavigationOptions,
   fallbackName: string,
-) => {
-  return useCallback(
+) =>
+  useCallback(
     ({ route }: ScreenOptions): NativeStackNavigationOptions => {
       const routeName: string = getFocusedRouteNameFromRoute(route) ?? fallbackName;
 
@@ -27,4 +27,3 @@ export const useScreenHeaderTitle = (
     },
     [screenOptions, fallbackName],
   );
-};

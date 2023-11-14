@@ -14,6 +14,5 @@ const fontSettingsIterator = ([
   textTransform,
 });
 
-export const extractFontSettings = (fontSettings: DefaultFontSettings) => {
-  return mapValues(fontSettings, fontSettingsIterator);
-};
+export const extractFontSettings = (fontSettings: DefaultFontSettings) =>
+  mapValues(fontSettings, fontSettingsIterator);

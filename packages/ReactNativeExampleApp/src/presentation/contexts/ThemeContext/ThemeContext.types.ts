@@ -12,6 +12,7 @@ export type ThemeContextType = [ThemeVariant, Dispatch<SetStateAction<ThemeVaria
 export const ThemeContext = createContext<ThemeContextType>([ThemeVariant.Default, noop]);
 
 export type ThemeStyles = {
+  getIcons: () => DefaultTheme['icons'];
   getColors: () => DefaultTheme['colors'];
   getSpacing: () => DefaultTheme['spacing'];
   getFontNames: () => DefaultTheme['fontNames'];

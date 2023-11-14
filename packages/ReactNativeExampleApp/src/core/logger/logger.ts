@@ -30,7 +30,7 @@ export class Logger {
     } else {
       this.transport(
         LoggerLevels.Error,
-        new Error(`logger.error was not provided a Error`),
+        new Error('logger.error was not provided a Error'),
         metadata,
       );
     }
