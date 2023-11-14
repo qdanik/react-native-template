@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "Shared Prettier configuration",
   "main": "./prettier-config.json",
+  "devDependencies": {
+    "prettier": "^3.1.0"
+  },
   "peerDependencies": {
-    "prettier": "3.1.0"
+    "prettier": ">=3"
   }
 }

@@ -1,8 +1,7 @@
 import React, { memo, ReactNode, useCallback, useEffect, useRef, useState } from 'react';
 import { Keyboard, LayoutChangeEvent, StyleSheet, View } from 'react-native';
 
-import { isIOS, KEYBOARD_EVENTS } from '../../constants';
-import { composeTestID } from '../../core';
+import { composeTestID, isIOS, KEYBOARD_EVENTS } from '../../core';
 import { useEventListener } from '../../hooks';
 
 type Props = {

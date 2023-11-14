@@ -1,8 +1,9 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Button, StyleSheet, Text, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-import { SCREENS, ScreensNavigationProp } from '../../../constants';
+import { SCREENS, ScreensNavigationProp } from '../../../core';
 
 const styles = StyleSheet.create({
   container: {
@@ -13,11 +14,13 @@ const styles = StyleSheet.create({
 });
 
 export function HomeScreen() {
+  const { t } = useTranslation();
   const navigation = useNavigation<ScreensNavigationProp>();
 
   return (
     <View style={styles.container}>
       <Text>Home Screen</Text>
+      <Text>{t('hello', { name: 'Username' })}</Text>
       <Button
         title="Go to Details"
         onPress={() => {

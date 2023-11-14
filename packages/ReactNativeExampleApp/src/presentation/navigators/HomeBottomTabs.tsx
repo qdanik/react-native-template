@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import { SCREENS } from '../../constants';
+import { SCREENS } from '../../core';
 import { DetailsScreen } from '../screens';
 import { HomeNavigator } from './HomeNavigator';
 

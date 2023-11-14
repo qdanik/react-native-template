@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-import { SCREENS, ScreensNavigationProp } from '../../../constants';
+import { SCREENS, ScreensNavigationProp } from '../../../core';
 
 const styles = StyleSheet.create({
   container: {

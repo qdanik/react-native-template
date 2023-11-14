@@ -1,4 +1,7 @@
-module.exports = {
+/**
+ * @type {import('@react-native-community/eslint-config').ESLintConfig}
+ */
+const config = {
   root: true,
   extends: '@react-native-template',
   parserOptions: {
@@ -12,4 +15,17 @@ module.exports = {
     },
     useJSXTextNode: true,
   },
+  settings: {
+    react: {
+      version: 'detect',
+    },
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
+        moduleDirectory: ['node_modules', 'src/', './'],
+      },
+    },
+  },
 };
+
+module.exports = config;

@@ -2,7 +2,7 @@ import { useCallback, useLayoutEffect, useState } from 'react';
 import { Keyboard, KeyboardEvent } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-import { isIOS, KEYBOARD_EVENTS } from '../../constants';
+import { isIOS, KEYBOARD_EVENTS } from '../../core';
 import { useEventListener } from '../useEventListener';
 
 export const useKeyboardHeight = (bottomOffset = 0) => {

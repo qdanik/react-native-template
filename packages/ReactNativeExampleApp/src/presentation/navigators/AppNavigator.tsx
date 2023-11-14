@@ -6,8 +6,7 @@ import {
   NativeStackNavigationOptions,
 } from '@react-navigation/native-stack';
 
-import { linking, navigationContainerRef, SCREENS } from '../../constants';
-import { logger } from '../../core';
+import { linking, logger, navigationContainerRef, SCREENS } from '../../core';
 import { useNavigationReady, useScreenTracking } from '../../hooks';
 import { SettingsScreen } from '../screens';
 import { HomeBottomTabs } from './HomeBottomTabs';

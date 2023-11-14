@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 
-import { navigationContainerQueue } from '../../constants';
+import { navigationContainerQueue } from '../../core';
 
 export const useNavigationReady = () => {
   const handleReady = useCallback(() => {

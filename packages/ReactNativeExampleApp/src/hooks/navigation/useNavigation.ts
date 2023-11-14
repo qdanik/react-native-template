@@ -1,11 +1,7 @@
 import { useCallback } from 'react';
 import { StackActions } from '@react-navigation/native';
 
-import {
-  navigationContainerQueue,
-  navigationContainerRef,
-  ScreensParamList,
-} from '../../constants';
+import { navigationContainerQueue, navigationContainerRef, ScreensParamList } from '../../core';
 
 type Navigate = <RouteName extends keyof ScreensParamList>(
   ...args: RouteName extends unknown

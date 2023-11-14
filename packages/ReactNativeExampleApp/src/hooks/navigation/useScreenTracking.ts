@@ -1,6 +1,6 @@
 import { useCallback, useRef } from 'react';
 
-import { navigationContainerRef } from '../../constants';
+import { navigationContainerRef } from '../../core';
 
 type TrackScreenView = (screenName: string) => void;
 
