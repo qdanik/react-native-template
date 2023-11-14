@@ -1,8 +1,8 @@
 import { useCallback, useContext, useMemo } from 'react';
 import { StyleSheet } from 'react-native';
-import { DefaultTheme, Themes, ThemeVariant } from 'core';
 import { merge } from 'lodash';
 
+import { DefaultTheme, Themes, ThemeVariant } from '../../../core';
 import { ThemeContext, ThemeContextType, ThemeStyles } from './ThemeContext.types';
 
 export const useTheme = (): ThemeContextType => {

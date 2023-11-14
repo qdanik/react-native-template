@@ -20,7 +20,9 @@ const AppScreenOptions: NativeStackNavigationOptions = {
 
 export function AppNavigator() {
   const onNavigationReady = useNavigationReady();
-  const { onReady, onStateChange } = useScreenTracking(logger.info);
+  const { onReady, onStateChange } = useScreenTracking(screenName => {
+    logger.info(`Screen changed to ${screenName}`);
+  });
 
   const handleReady = useCallback(() => {
     onNavigationReady();
@@ -34,8 +36,8 @@ export function AppNavigator() {
       onReady={handleReady}
       onStateChange={onStateChange}
     >
-      <AppStack.Navigator initialRouteName={SCREENS.Home} screenOptions={AppScreenOptions}>
-        <AppStack.Screen name={SCREENS.Home} component={HomeBottomTabs} />
+      <AppStack.Navigator initialRouteName={SCREENS.BottomTabs} screenOptions={AppScreenOptions}>
+        <AppStack.Screen name={SCREENS.BottomTabs} component={HomeBottomTabs} />
         <AppStack.Screen name={SCREENS.Settings} component={SettingsScreen} />
       </AppStack.Navigator>
     </NavigationContainer>

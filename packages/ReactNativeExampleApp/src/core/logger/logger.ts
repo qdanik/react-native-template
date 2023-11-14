@@ -1,59 +1,62 @@
+import { Config } from '../constants';
 import { ENABLED_LOG_LEVELS, LoggerLevels, LoggerMetadata, LoggerTransport } from './logger.types';
 
 export class Logger {
-  LogLevel = LoggerLevels;
+  enabled: boolean = Config.LOG_ENABLED === 'true';
 
-  enabled: boolean = true;
-
-  level: LoggerLevels = LoggerLevels.Log;
+  level: LoggerLevels = Config.LOG_LEVEL as LoggerLevels;
 
   transports: LoggerTransport[] = [];
 
-  debug(message: string, metadata: LoggerMetadata = {}) {
+  debug = (message: string, metadata: LoggerMetadata = {}) => {
     this.transport(LoggerLevels.Debug, message, metadata);
-  }
+  };
 
-  info(message: string, metadata: LoggerMetadata = {}) {
+  info = (message: string, metadata: LoggerMetadata = {}) => {
     this.transport(LoggerLevels.Info, message, metadata);
-  }
+  };
 
-  log(message: string, metadata: LoggerMetadata = {}) {
+  log = (message: string, metadata: LoggerMetadata = {}) => {
     this.transport(LoggerLevels.Log, message, metadata);
-  }
+  };
 
-  warn(message: string, metadata: LoggerMetadata = {}) {
+  warn = (message: string, metadata: LoggerMetadata = {}) => {
     this.transport(LoggerLevels.Warn, message, metadata);
-  }
+  };
 
-  error(error: Error, metadata: LoggerMetadata = {}) {
+  error = (error: Error, metadata: LoggerMetadata = {}) => {
     if (error instanceof Error) {
       this.transport(LoggerLevels.Error, error, metadata);
     } else {
       this.transport(
         LoggerLevels.Error,
-        new Error(`logger.error was not provided a RainbowError`),
+        new Error(`logger.error was not provided a Error`),
         metadata,
       );
     }
-  }
+  };
 
-  addTransport(transport: LoggerTransport) {
+  addTransport = (transport: LoggerTransport) => {
     this.transports.push(transport);
 
     return () => {
       this.transports.splice(this.transports.indexOf(transport), 1);
     };
-  }
+  };
 
-  disable() {
+  disable = () => {
     this.enabled = false;
-  }
+  };
 
-  enable() {
+  enable = () => {
     this.enabled = true;
-  }
+  };
 
-  protected transport(level: LoggerLevels, message: string | Error, metadata: LoggerMetadata = {}) {
+  protected transport = (
+    level: LoggerLevels,
+    message: string | Error,
+    metadata: LoggerMetadata = {},
+  ) => {
     if (!this.enabled) {
       return;
     }
@@ -65,5 +68,5 @@ export class Logger {
     for (const transport of this.transports) {
       transport(level, message, metadata || {});
     }
-  }
+  };
 }

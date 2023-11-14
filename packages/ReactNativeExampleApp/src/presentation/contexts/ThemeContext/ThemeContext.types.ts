@@ -1,6 +1,7 @@
 import React, { createContext, Dispatch, SetStateAction } from 'react';
-import { DefaultTheme, ThemeVariant } from 'core';
 import { noop } from 'lodash';
+
+import { DefaultTheme, ThemeVariant } from '../../../core';
 
 export type ThemeProps = {
   children: React.ReactNode;

@@ -1,6 +1,6 @@
 {
   "ignore_dirs": [
-    "packages/MyApp/ios",
-    "packages/MyApp/android"
+    "packages/ReactNativeExampleApp/ios",
+    "packages/ReactNativeExampleApp/android"
   ]
 }

@@ -19,9 +19,9 @@ export function DetailsScreen() {
     <View style={styles.container}>
       <Text>Details Screen</Text>
       <Button
-        title="Go to Home"
+        title="Go to Settings"
         onPress={() => {
-          navigation.navigate(SCREENS.Home);
+          navigation.navigate(SCREENS.Settings);
         }}
       />
     </View>

@@ -14,7 +14,9 @@
     "tslint": "tsc --pretty --noEmit",
     "test": "watchman watch-del-all && jest",
     "postinstall": "yarn rnuc .env",
-    "rename": "npx react-native-rename 'ReactNativeExampleApp' -b 'com.example.rnapp'"
+    "rename": "npx react-native-rename 'ReactNativeExampleApp' -b 'com.example.rnapp'",
+    "clear": "pod cache clean --all && rm -rf build && rm -rf node_modules && yarn && cd ios && pod install && cd ..",
+    "clear-watchman": "watchman watch-del-all"
   },
   "dependencies": {
     "@react-navigation/bottom-tabs": "^6.5.11",
@@ -51,17 +53,22 @@
     "@types/react": "^18.2.37",
     "@types/react-test-renderer": "^18.0.6",
     "babel-jest": "^29.7.0",
-    "babel-plugin-module-resolver": "^5.0.0",
     "eslint": "^8.53.0",
     "jest": "^29.7.0",
     "metro-react-native-babel-preset": "0.77.0",
     "prettier": "^3.1.0",
+    "react-native-svg-transformer": "^1.1.0",
     "react-test-renderer": "18.2.0",
     "typescript": "5.2.2"
   },
   "workspaces": {
     "nohoist": [
-      "**/react-native-ultimate-config"
+      "react",
+      "react/**",
+      "react*",
+      "@react",
+      "@react/**",
+      "@react*"
     ]
   }
 }

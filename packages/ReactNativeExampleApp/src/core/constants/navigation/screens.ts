@@ -2,6 +2,8 @@ import { NavigationProp } from '@react-navigation/native';
 
 export enum SCREENS {
   Details = 'Details',
+  BottomTabs = 'BottomTabs',
+  Dashboard = 'Dashboard',
   Home = 'Home',
   Settings = 'Settings',
 }

@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
-import { ThemeStyles } from 'presentation/contexts/ThemeContext/ThemeContext.types';
+
+import { ThemeStyles } from '../../../presentation/contexts';
 
 export const createHomeStyles = (theme: ThemeStyles) => {
   const colors = theme.getColors();

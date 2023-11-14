@@ -1,6 +1,7 @@
 #import "AppDelegate.h"
 
 #import <React/RCTBundleURLProvider.h>
+#import <react-native-ultimate-config/ConfigValues.h>
 
 @implementation AppDelegate
 

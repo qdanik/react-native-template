@@ -1,4 +1,4 @@
-import 'core';
+import './core/i18n';
 import React from 'react';
 import { StyleSheet } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';

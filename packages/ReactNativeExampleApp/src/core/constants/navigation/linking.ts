@@ -1,6 +1,6 @@
-import Config from 'react-native-ultimate-config';
 import { LinkingOptions } from '@react-navigation/native';
 
+import { Config } from '../config';
 import { SCREENS, ScreensParamList } from './screens';
 
 export const linking: LinkingOptions<ScreensParamList> = {

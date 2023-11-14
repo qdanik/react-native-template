@@ -1,6 +1,6 @@
 import React, { memo, useMemo, useState } from 'react';
-import { ThemeVariant } from 'core/theme/types';
 
+import { ThemeVariant } from '../../../core';
 import { ThemeContext, ThemeContextType, ThemeProps } from './ThemeContext.types';
 
 const ThemeProviderComponent: React.FC<ThemeProps> = ({ children }) => {

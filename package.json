@@ -7,11 +7,16 @@
     "lint": "lerna run lint --stream",
     "prettier": "lerna run prettier --stream",
     "test": "lerna run test --stream",
-    "prepare": "husky install && chmod ug+x ./.husky/*"
+    "prepare": "husky install && chmod ug+x ./.husky/*",
+    "postinstall": "lerna run postinstall --stream"
   },
   "workspaces": {
     "packages": [
       "packages/*"
+    ],
+    "nohoist": [
+      "**/react-native",
+      "**/react-native/**"
     ]
   },
   "devDependencies": {
