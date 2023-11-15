@@ -1,11 +1,12 @@
-import * as React from 'react';
-import { useCallback } from 'react';
+import React, { useCallback } from 'react';
+import BootSplash from 'react-native-bootsplash';
 import { NavigationContainer } from '@react-navigation/native';
 import {
   createNativeStackNavigator,
   NativeStackNavigationOptions,
 } from '@react-navigation/native-stack';
 
+import { AnimatedBootSplash } from '../../components';
 import { linking, logger, navigationContainerRef, SCREENS } from '../../core';
 import { useNavigationReady, useScreenTracking } from '../../hooks';
 import { SettingsScreen } from '../screens';
@@ -27,6 +28,7 @@ export function AppNavigator() {
   const handleReady = useCallback(() => {
     onNavigationReady();
     onReady();
+    BootSplash.hide({ fade: true }).catch(logger.error);
   }, [onNavigationReady, onReady]);
 
   return (
@@ -40,6 +42,7 @@ export function AppNavigator() {
         <AppStack.Screen name={SCREENS.BottomTabs} component={HomeBottomTabs} />
         <AppStack.Screen name={SCREENS.Settings} component={SettingsScreen} />
       </AppStack.Navigator>
+      <AnimatedBootSplash />
     </NavigationContainer>
   );
 }

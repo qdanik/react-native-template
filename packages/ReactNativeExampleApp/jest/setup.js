@@ -1,6 +1,5 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable global-require */
-/* eslint-disable @typescript-eslint/no-unsafe-return */
+
 import 'react-native-gesture-handler/jestSetup';
 
 jest.mock('react-native-reanimated', () => {
@@ -14,3 +13,15 @@ jest.mock('react-native-reanimated', () => {
 });
 
 jest.mock('react-native/Libraries/Animated/NativeAnimatedHelper');
+
+jest.mock('react-native-bootsplash', () => {
+  return {
+    hide: jest.fn().mockResolvedValue(),
+    isVisible: jest.fn().mockResolvedValue(false),
+    useHideAnimation: jest.fn().mockReturnValue({
+      container: {},
+      logo: { source: 0 },
+      brand: { source: 0 },
+    }),
+  };
+});

@@ -17,6 +17,7 @@
     "postinstall": "yarn rnuc .env",
     "rename": "npx react-native-rename 'ReactNativeExampleApp' -b 'com.example.rnapp'",
     "app-icon": "npx icon-set-creator create ./src/core/theme/global/icons/logo/app-logo.svg",
+    "bootsplash": "react-native generate-bootsplash ./src/core/theme/global/icons/logo/splash-logo.svg --background=ffffff --logo-width=100 --assets-output=src/resources/bootsplash --flavor=main",
     "clean": "pod cache clean --all && yarn pods",
     "clean:watch": "watchman watch-del-all"
   },
@@ -31,6 +32,7 @@
     "react": "18.2.0",
     "react-i18next": "^13.4.1",
     "react-native": "0.72.7",
+    "react-native-bootsplash": "^5.1.2",
     "react-native-gesture-handler": "^2.13.4",
     "react-native-mmkv": "^2.11.0",
     "react-native-reanimated": "^3.5.4",
@@ -64,5 +66,10 @@
     "react-native-svg-transformer": "^1.1.0",
     "react-test-renderer": "18.2.0",
     "typescript": "5.2.2"
+  },
+  "resolutions": {
+    "prettier": "3.0.3",
+    "eslint-config-prettier": "9.0.0",
+    "eslint-plugin-prettier": "5.0.1"
   }
 }

@@ -20,6 +20,10 @@ const config = {
       },
     },
   ],
+  rules: {
+    'global-require': 'off',
+    '@typescript-eslint/no-unsafe-assignment': 'off',
+  },
 };
 
 module.exports = config;
