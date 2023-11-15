@@ -2,7 +2,7 @@ import React, { memo, useCallback, useState } from 'react';
 import { Animated, Dimensions } from 'react-native';
 import BootSplash from 'react-native-bootsplash';
 
-const AnimatedBootSplashComponent = () => {
+export const AnimatedBootSplash = memo(() => {
   const [isAppReady, setIsAppReady] = useState(false);
   const [opacity] = useState(() => new Animated.Value(1));
   const [translateY] = useState(() => new Animated.Value(0));
@@ -12,8 +12,8 @@ const AnimatedBootSplashComponent = () => {
   }, []);
 
   const { container, logo } = BootSplash.useHideAnimation({
-    manifest: require('../../resources/bootsplash/bootsplash_manifest.json'),
-    logo: require('../../resources/bootsplash/bootsplash_logo.png'),
+    manifest: require('../../../resources/bootsplash/bootsplash_manifest.json'),
+    logo: require('../../../resources/bootsplash/bootsplash_logo.png'),
 
     statusBarTranslucent: true,
     navigationBarTranslucent: false,
@@ -48,6 +48,4 @@ const AnimatedBootSplashComponent = () => {
       <Animated.Image {...logo} style={[logo.style, { transform: [{ translateY }] }]} />
     </Animated.View>
   );
-};
-
-export const AnimatedBootSplash = memo(AnimatedBootSplashComponent);
+});

@@ -1,8 +1,8 @@
 import React, { memo, ReactNode, useCallback, useEffect, useRef, useState } from 'react';
 import { Keyboard, LayoutChangeEvent, StyleSheet, View } from 'react-native';
 
-import { composeTestID, isIOS, KEYBOARD_EVENTS } from '../../core';
-import { useEventListener } from '../../hooks';
+import { composeTestID, isIOS, KEYBOARD_EVENTS } from '../../../core';
+import { useEventListener } from '../../../hooks';
 
 type Props = {
   testID?: string;
@@ -14,7 +14,7 @@ type KeyboardWrapperStyle = {
   height?: number;
 };
 
-const KeyboardWrapperComponent = ({ children, testID }: Props) => {
+export const KeyboardWrapper: React.FC<Props> = memo(({ children, testID }) => {
   const isKeyboardOpened = useRef(false);
   const [style, setStyle] = useState<KeyboardWrapperStyle>({
     flex: 1,
@@ -50,6 +50,4 @@ const KeyboardWrapperComponent = ({ children, testID }: Props) => {
       </View>
     </>
   );
-};
-
-export const KeyboardWrapper = memo<Props>(KeyboardWrapperComponent);
+});

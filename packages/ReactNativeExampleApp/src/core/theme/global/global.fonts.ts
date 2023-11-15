@@ -1,4 +1,4 @@
-import { DefaultFontNames, DefaultFontSettings } from './types';
+import { DefaultFontNames, DefaultFontSettings } from './global.types';
 
 export const fontNames: DefaultFontNames = {
   PRIMARY_ITALIC: 'Poppins-Italic',

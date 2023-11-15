@@ -1,5 +1,1 @@
-import { colors } from './colors';
-
-export const vipTheme = {
-  colors,
-};
+export * from './vip.theme';

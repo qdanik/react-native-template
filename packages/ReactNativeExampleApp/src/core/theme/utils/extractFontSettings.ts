@@ -1,6 +1,6 @@
 import { mapValues } from 'lodash';
 
-import { DefaultFontSettings, DefaultFontSettingsValue } from '../global/types';
+import { DefaultFontSettings, DefaultFontSettingsValue } from '../global/global.types';
 
 const fontSettingsIterator = ([
   fontSize,

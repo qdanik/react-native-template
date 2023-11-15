@@ -1,3 +1,3 @@
 export const icons = {
-  Logo: import('./logo/app-logo.svg'),
+  Logo: require('./logo/app-logo.svg'),
 };

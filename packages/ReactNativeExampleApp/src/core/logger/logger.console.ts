@@ -1,5 +1,4 @@
-import format from 'date-fns/format';
-
+import { DateFormats, dateUtils } from '../utils';
 import { LOGGER_COLORS, LoggerLevels, LoggerTransport } from './logger.types';
 
 function withColor([x, y]: [number, number]) {
@@ -24,7 +23,7 @@ const CONSOLE_COLORS = {
 };
 
 export const consoleTransport: LoggerTransport = (level, message, metadata) => {
-  const timestamp = format(new Date(), 'HH:mm:ss');
+  const timestamp = dateUtils.formatBy(new Date(), DateFormats.TIME);
   const extra = Object.keys(metadata).length ? ` ${JSON.stringify(metadata, null, '  ')}` : '';
   const color = CONSOLE_COLORS[level];
 

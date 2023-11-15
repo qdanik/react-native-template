@@ -2,9 +2,10 @@ import './core/i18n';
 import React from 'react';
 import { StyleSheet } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { Provider } from 'react-redux';
 
-import { KeyboardWrapper } from './components';
-import { AppNavigator, ThemeProvider } from './presentation';
+import { AppNavigator, KeyboardWrapper, ThemeProvider } from './presentation';
+import { store } from './store';
 
 const styles = StyleSheet.create({
   container: {
@@ -16,9 +17,11 @@ function App(): JSX.Element {
   return (
     <KeyboardWrapper>
       <GestureHandlerRootView style={styles.container}>
-        <ThemeProvider>
-          <AppNavigator />
-        </ThemeProvider>
+        <Provider store={store}>
+          <ThemeProvider>
+            <AppNavigator />
+          </ThemeProvider>
+        </Provider>
       </GestureHandlerRootView>
     </KeyboardWrapper>
   );
