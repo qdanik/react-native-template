@@ -23,6 +23,7 @@
     "clean:watch": "watchman watch-del-all"
   },
   "dependencies": {
+    "@notifee/react-native": "^7.8.0",
     "@react-navigation/bottom-tabs": "^6.5.11",
     "@react-navigation/elements": "^1.3.21",
     "@react-navigation/native": "^6.1.9",
@@ -43,8 +44,8 @@
     "react-native-svg": "^14.0.0",
     "react-native-ultimate-config": "^6.0.1",
     "react-redux": "^8.1.3",
-    "redux-saga": "^1.2.3",
-    "redux-persist": "^6.0.0"
+    "redux-persist": "^6.0.0",
+    "redux-saga": "^1.2.3"
   },
   "devDependencies": {
     "@babel/core": "^7.23.3",

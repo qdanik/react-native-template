@@ -24,7 +24,7 @@ export class Logger {
     this.transport(LoggerLevels.Warn, message, metadata);
   };
 
-  error = (error: Error, metadata: LoggerMetadata = {}) => {
+  error = <T>(error: T | Error, metadata: LoggerMetadata = {}) => {
     if (error instanceof Error) {
       this.transport(LoggerLevels.Error, error, metadata);
     } else {
