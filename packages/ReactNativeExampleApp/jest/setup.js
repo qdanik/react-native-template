@@ -1,5 +1,3 @@
-/* eslint-disable global-require */
-
 import 'react-native-gesture-handler/jestSetup';
 
 jest.mock('react-native-reanimated', () => {
@@ -13,6 +11,7 @@ jest.mock('react-native-reanimated', () => {
 });
 
 jest.mock('react-native/Libraries/Animated/NativeAnimatedHelper');
+jest.mock('react-native-permissions', () => require('react-native-permissions/mock'));
 
 jest.mock('react-native-bootsplash', () => {
   return {

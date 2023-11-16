@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
@@ -15,15 +15,14 @@ const styles = StyleSheet.create({
 export function SettingsScreen() {
   const navigation = useNavigation<ScreensNavigationProp>();
 
+  const handleGoHome = useCallback(() => {
+    navigation.navigate(SCREENS.DashboardInfo);
+  }, [navigation]);
+
   return (
     <View style={styles.container}>
       <Text>Settings Screen</Text>
-      <Button
-        title="Go to Home"
-        onPress={() => {
-          navigation.navigate(SCREENS.Home);
-        }}
-      />
+      <Button title="Go to Home" onPress={handleGoHome} />
     </View>
   );
 }

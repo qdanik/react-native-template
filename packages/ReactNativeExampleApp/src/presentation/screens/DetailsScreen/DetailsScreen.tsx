@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
 import { RouteProp, useNavigation, useRoute } from '@react-navigation/native';
 
@@ -16,25 +16,25 @@ const styles = StyleSheet.create({
 
 export function DetailsScreen() {
   const dispatch = useAppDispatch();
-  const userPersistedId = useAppSelector(state => state.users.id);
-  const user = useAppSelector(state => state.users.data);
   const navigation = useNavigation<ScreensNavigationProp>();
-  const {
-    params: { id },
-  } = useRoute<RouteProp<ScreensParamList, SCREENS.Details>>();
+  const user = useAppSelector(state => state.users.data);
+  const userPersistedId = useAppSelector(state => state.users.id);
+  const { params: { id } = { id: userPersistedId } } =
+    useRoute<RouteProp<ScreensParamList, SCREENS.Details>>();
 
-  const handleGetDetails = () => {
-    dispatch(getUserAction(id ?? '1'));
-  };
+  const handleGetDetails = useCallback(() => {
+    dispatch(getUserAction(id));
+  }, [dispatch, id]);
 
-  const handleGoToSettings = () => {
+  const handleGoToSettings = useCallback(() => {
     navigation.navigate(SCREENS.Settings);
-  };
+  }, [navigation]);
 
   return (
     <View style={styles.container}>
       <Text>Details Screen</Text>
-      <Text>userPersistedId - {JSON.stringify(userPersistedId)}</Text>
+      <Text>currentId - {id}</Text>
+      <Text>userPersistedId - {userPersistedId}</Text>
       <Text>Data - {JSON.stringify(user)}</Text>
       <Button title="Get Details" onPress={handleGetDetails} />
       <Button title="Go to Settings" onPress={handleGoToSettings} />

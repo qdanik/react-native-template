@@ -1,40 +1,21 @@
-import { useCallback, useLayoutEffect, useState } from 'react';
-import { Keyboard, KeyboardEvent } from 'react-native';
+import { useEffect, useState } from 'react';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-
-import { isIOS, KEYBOARD_EVENTS } from '../../core';
-import { useEventListener } from '../useEventListener';
+import { useKeyboard } from '@react-native-community/hooks';
 
 export const useKeyboardHeight = (bottomOffset = 0) => {
+  const keyboard = useKeyboard();
   const { bottom } = useSafeAreaInsets();
   const [keyboardHeight, setKeyboardHeight] = useState(0);
 
-  const onKeyboardShow = useCallback(
-    (event: KeyboardEvent) => {
-      if (!event) {
-        return;
-      }
-      const value = event.endCoordinates.height - (bottomOffset || bottom);
-      setKeyboardHeight(value);
-    },
-    [bottom, bottomOffset],
-  );
+  useEffect(() => {
+    if (!keyboard.keyboardShown) {
+      setKeyboardHeight(0);
 
-  const onKeyboardHide = useCallback(() => {
-    setKeyboardHeight(0);
-  }, []);
+      return;
+    }
 
-  const handleShow = useEventListener(Keyboard, KEYBOARD_EVENTS.SHOW, onKeyboardShow, !isIOS);
-  const handleHide = useEventListener(Keyboard, KEYBOARD_EVENTS.HIDE, onKeyboardHide);
-  const handleFrameChange = useEventListener(
-    Keyboard,
-    KEYBOARD_EVENTS.FRAME_CHANGE,
-    onKeyboardShow,
-  );
-
-  useLayoutEffect(handleShow, [handleShow]);
-  useLayoutEffect(handleHide, [handleHide]);
-  useLayoutEffect(handleFrameChange, [handleFrameChange]);
+    setKeyboardHeight(keyboard.coordinates.end.height - (bottomOffset || bottom));
+  }, [bottom, bottomOffset, keyboard.coordinates.end.height, keyboard.keyboardShown]);
 
   return keyboardHeight;
 };

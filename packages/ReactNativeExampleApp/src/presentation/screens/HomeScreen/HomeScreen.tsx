@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Button, Text, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-import { displayInitialNotification, SCREENS, ScreensNavigationProp } from '../../../core';
+import { displayExampleNotification, SCREENS, ScreensNavigationProp } from '../../../core';
 import { Config } from '../../../core/constants/config';
 import { useStyles } from '../../../presentation/contexts';
 import { createHomeStyles } from './HomeScreen.styles';
@@ -20,7 +20,7 @@ export const HomeScreen: React.FC = () => {
   }, [navigation]);
 
   const handleDisplayNotification = useCallback(() => {
-    displayInitialNotification();
+    displayExampleNotification();
   }, []);
 
   return (

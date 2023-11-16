@@ -1,11 +1,11 @@
 import './core/i18n';
-import React, { useEffect } from 'react';
+import React from 'react';
 import { StyleSheet } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 
-import { initializeNotifications, logger } from './core';
+import { useNotificationsService } from './hooks';
 import { AppNavigator, KeyboardWrapper, ThemeProvider } from './presentation';
 import { persistor, store } from './store';
 
@@ -16,9 +16,7 @@ const styles = StyleSheet.create({
 });
 
 function App(): JSX.Element {
-  useEffect(() => {
-    initializeNotifications().catch(logger.error);
-  });
+  useNotificationsService();
 
   return (
     <KeyboardWrapper>
