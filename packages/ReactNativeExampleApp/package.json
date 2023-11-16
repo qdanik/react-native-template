@@ -16,6 +16,7 @@
     "pods": "cd ios && rm -rf build && pod install && cd ..",
     "postinstall": "yarn rnuc .env",
     "rename": "npx react-native-rename 'ReactNativeExampleApp' -b 'com.example.rnapp'",
+    "deep-link:test": "npx uri-scheme open rneapp://home/details/678 --ios",
     "app-icon": "npx icon-set-creator create ./src/core/theme/global/icons/logo/app-logo.svg",
     "bootsplash": "react-native generate-bootsplash ./src/core/theme/global/icons/logo/splash-logo.svg --background=ffffff --logo-width=100 --assets-output=src/resources/bootsplash --flavor=main",
     "clean": "pod cache clean --all && yarn pods",

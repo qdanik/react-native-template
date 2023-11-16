@@ -38,8 +38,8 @@ export function AppNavigator() {
       onReady={handleReady}
       onStateChange={onStateChange}
     >
-      <AppStack.Navigator initialRouteName={SCREENS.BottomTabs} screenOptions={AppScreenOptions}>
-        <AppStack.Screen name={SCREENS.BottomTabs} component={HomeBottomTabs} />
+      <AppStack.Navigator initialRouteName={SCREENS.Home} screenOptions={AppScreenOptions}>
+        <AppStack.Screen name={SCREENS.Home} component={HomeBottomTabs} />
         <AppStack.Screen name={SCREENS.Settings} component={SettingsScreen} />
       </AppStack.Navigator>
       <AnimatedBootSplash />

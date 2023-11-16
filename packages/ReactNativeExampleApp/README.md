@@ -10,6 +10,7 @@ In addition to Lerna, the template includes a basic setup for common features li
 - [] Rename Monorepo (see `How to rename a Monorepo?`)
 - [] Add App Icon (see `How to add an App Icon?`)
 - [] Add Splash Screen (see `How to add a Splash Screen?`)
+- [] Add Deep Linking (see `How to test Deep Linking?`)
 
 #### How to rename a Monorepo?
 
@@ -27,3 +28,9 @@ In addition to Lerna, the template includes a basic setup for common features li
 - Replace the splash screen to `/packages/ReactNativeExampleApp/src/core/theme/global/icons/logo/splash-screen.svg`
 - run `yarn run bootsplash`
 - verify that the splash screen is correct in Xcode/Android Studio
+
+### How to test Deep Linking?
+
+- run `npx uri-scheme open rneapp://details/123 --ios` or run `npx uri-scheme open rneapp://details/123 --android`
+- Verify that the app opens and navigates to the Details screen
+- Modify the `./core/linking/linking.constants.ts` file to add new routes

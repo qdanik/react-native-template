@@ -15,8 +15,8 @@ const screenOptions: NativeStackNavigationOptions = {
 
 export function HomeNavigator() {
   return (
-    <HomeStack.Navigator initialRouteName={SCREENS.Home} screenOptions={screenOptions}>
-      <HomeStack.Screen name={SCREENS.Home} component={HomeScreen} />
+    <HomeStack.Navigator initialRouteName={SCREENS.DashboardInfo} screenOptions={screenOptions}>
+      <HomeStack.Screen name={SCREENS.DashboardInfo} component={HomeScreen} />
     </HomeStack.Navigator>
   );
 }

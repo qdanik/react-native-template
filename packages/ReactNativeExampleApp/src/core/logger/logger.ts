@@ -1,4 +1,4 @@
-import { Config } from '../constants';
+import { Config } from '../constants/config';
 import { ENABLED_LOG_LEVELS, LoggerLevels, LoggerMetadata, LoggerTransport } from './logger.types';
 
 export class Logger {

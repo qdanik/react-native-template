@@ -2,18 +2,20 @@ import { NavigationProp } from '@react-navigation/native';
 
 export enum SCREENS {
   Details = 'Details',
-  BottomTabs = 'BottomTabs',
-  Dashboard = 'Dashboard',
   Home = 'Home',
+  Dashboard = 'Dashboard',
+  DashboardInfo = 'DashboardInfo',
   Settings = 'Settings',
 }
 
 export type ScreenNames = keyof typeof SCREENS;
 
-export type ScreensParamList = {
-  [SCREENS.Details]: { id: string };
+export interface ScreensParamList {
   [SCREENS.Home]: undefined;
+  [SCREENS.Dashboard]: undefined;
+  [SCREENS.DashboardInfo]: undefined;
+  [SCREENS.Details]: { id: string };
   [SCREENS.Settings]: undefined;
-};
+}
 
 export type ScreensNavigationProp = NavigationProp<ScreensParamList>;

@@ -10,7 +10,7 @@
         <action android:name="android.intent.action.VIEW"/>
         <category android:name="android.intent.category.DEFAULT"/>
         <category android:name="android.intent.category.BROWSABLE"/>
-        <data android:scheme="${LINKING_SCHEME}"/>
+        <data android:scheme="${LINKING_APP_SCHEME}"/>
       </intent-filter>
       <intent-filter>
         <action android:name="android.intent.action.VIEW" />
@@ -18,7 +18,7 @@
         <category android:name="android.intent.category.BROWSABLE" />
         <data android:scheme="http" />
         <data android:scheme="https" />
-        <data android:host="${LINKING_DOMAIN}" />
+        <data android:host="${LINKING_APP_HOST}" />
       </intent-filter>
     </activity>
   </application>

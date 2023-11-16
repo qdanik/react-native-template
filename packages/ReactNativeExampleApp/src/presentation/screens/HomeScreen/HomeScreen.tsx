@@ -15,7 +15,7 @@ export const HomeScreen: React.FC = () => {
   return (
     <View style={styles.container}>
       <Text>Home Screen</Text>
-      <Text>{Config.APP_NAME}</Text>
+      <Text>{JSON.stringify(Config)}</Text>
       <Text>{t('hello', { name: 'Username' })}</Text>
       <Button
         title="Go to Details"
