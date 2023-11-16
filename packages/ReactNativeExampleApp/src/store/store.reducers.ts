@@ -1,9 +1,13 @@
-import { usersReducer, UsersStateType } from './users';
+import { combineReducers } from '@reduxjs/toolkit';
+import { persistReducer } from 'redux-persist';
+
+import { userPersistConfig } from './store.persist';
+import { usersInitialState, usersReducer } from './users';
 
 export type StateType = {
-  users: UsersStateType;
+  users: typeof usersInitialState;
 };
 
-export const rootReducers = {
-  users: usersReducer,
-};
+export const rootReducer = combineReducers({
+  users: persistReducer(userPersistConfig, usersReducer),
+});

@@ -8,6 +8,7 @@ In addition to Lerna, the template includes a basic setup for common features li
 
 - [] Verify that the app works on iOS and Android
 - [] Rename Monorepo (see `How to rename a Monorepo?`)
+- [] Update .env files
 - [] Add App Icon (see `How to add an App Icon?`)
 - [] Add Splash Screen (see `How to add a Splash Screen?`)
 - [] Add Deep Linking (see `How to test Deep Linking?`)

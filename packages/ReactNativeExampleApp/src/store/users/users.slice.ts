@@ -2,34 +2,32 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { UsersStateType, UserType } from './users.types';
 
-const usersInitialState: UsersStateType = {
-  user: {
-    id: '',
-    data: null,
-    isLoading: false,
-    errors: '',
-  },
+export const usersInitialState: UsersStateType = {
+  id: '',
+  data: null,
+  isLoading: false,
+  errors: '',
 };
 
-export const { actions, reducer } = createSlice({
+const { actions, reducer } = createSlice({
   name: 'users',
   initialState: usersInitialState,
   reducers: {
     getUserAction: (state: UsersStateType, { payload: id }: PayloadAction<string>) => {
-      state.user.isLoading = true;
-      state.user.errors = '';
-      state.user.id = id;
+      state.isLoading = true;
+      state.errors = '';
+      state.id = id;
     },
     getUserSuccessAction: (state: UsersStateType, { payload: user }: PayloadAction<UserType>) => {
-      state.user.isLoading = false;
-      state.user.data = user;
+      state.isLoading = false;
+      state.data = user;
     },
     getUserErrorAction: (state: UsersStateType, { payload: error }: PayloadAction<string>) => {
-      state.user.isLoading = false;
-      state.user.errors = error;
+      state.isLoading = false;
+      state.errors = error;
 
-      if (!state.user.data) {
-        state.user.id = '';
+      if (!state.data) {
+        state.id = '';
       }
     },
   },

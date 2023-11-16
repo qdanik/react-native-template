@@ -3,9 +3,10 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
 
 import { AppNavigator, KeyboardWrapper, ThemeProvider } from './presentation';
-import { store } from './store';
+import { persistor, store } from './store';
 
 const styles = StyleSheet.create({
   container: {
@@ -18,9 +19,11 @@ function App(): JSX.Element {
     <KeyboardWrapper>
       <GestureHandlerRootView style={styles.container}>
         <Provider store={store}>
-          <ThemeProvider>
-            <AppNavigator />
-          </ThemeProvider>
+          <PersistGate loading={null} persistor={persistor}>
+            <ThemeProvider>
+              <AppNavigator />
+            </ThemeProvider>
+          </PersistGate>
         </Provider>
       </GestureHandlerRootView>
     </KeyboardWrapper>

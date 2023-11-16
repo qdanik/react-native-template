@@ -1,4 +1,3 @@
-// TODO: will be removed
 export type UserType = {
   id: string;
   name: string;
@@ -9,13 +8,9 @@ export type UserType = {
   updatedAt: Date;
 };
 
-export type IUserState = {
+export type UsersStateType = {
   id: string;
   data: UserType | null;
   isLoading: boolean;
   errors: string;
-};
-
-export type UsersStateType = {
-  user: IUserState;
 };
