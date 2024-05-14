@@ -1,6 +1,6 @@
 import type { UserConfig } from '@commitlint/types';
 
-const typeEnum = ['feat', 'fix', 'docs', 'style', 'refactor', 'test', 'chore', 'revert'];
+const typeEnum = ['feat', 'fix', 'docs', 'style', 'refactor', 'test', 'chore', 'revert', 'revup'];
 
 const scopeEnum = ['added', 'fixed', 'changed', 'removed', 'deprecated'];
 

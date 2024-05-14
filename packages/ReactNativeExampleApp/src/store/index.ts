@@ -1,5 +1,5 @@
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
-import { configureStore } from '@reduxjs/toolkit';
+import { configureStore, Tuple } from '@reduxjs/toolkit';
 import { persistStore } from 'redux-persist';
 import createSagaMiddleware from 'redux-saga';
 
@@ -16,7 +16,7 @@ export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 
 export const store = configureStore({
   reducer: rootReducer,
-  middleware: [sagaMiddleware],
+  middleware: () => new Tuple(sagaMiddleware),
 });
 export const persistor = persistStore(store);
 

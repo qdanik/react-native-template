@@ -11,7 +11,7 @@
     "prettier": "lerna run prettier --stream",
     "lint": "lerna run lint --stream",
     "test": "lerna run test --stream",
-    "prepare": "husky install && chmod ug+x ./.husky/*",
+    "prepare": "husky",
     "postinstall": "lerna run postinstall --stream"
   },
   "workspaces": {
@@ -27,21 +27,22 @@
     ]
   },
   "devDependencies": {
-    "@commitlint/cli": "^18.4.1",
-    "@commitlint/config-conventional": "^18.4.0",
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
     "@my-app/prettier-config": "^1.0.0",
-    "husky": "^8.0.3",
-    "lerna": "^7.4.2",
     "eslint": "^8.53.0",
-    "prettier": "3.0.3",
-    "typescript": "^5.2.2"
+    "husky": "^9.0.11",
+    "lerna": "^8.1.3",
+    "prettier": "3.2.5",
+    "typescript": "^5.4.5"
   },
   "engines": {
     "node": ">=18"
   },
   "resolutions": {
-    "prettier": "3.0.3",
-    "eslint-config-prettier": "9.0.0",
-    "eslint-plugin-prettier": "5.0.1"
-  }
+    "prettier": "3.2.5",
+    "eslint-config-prettier": "9.1.0",
+    "eslint-plugin-prettier": "5.1.3"
+  },
+  "packageManager": "yarn@1.22.21+sha1.1959a18351b811cdeedbd484a8f86c3cc3bbaf72"
 }

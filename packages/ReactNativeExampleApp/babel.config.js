@@ -3,7 +3,7 @@
  * @type {import('@babel/core').TransformOptions}
  */
 const config = {
-  presets: ['module:metro-react-native-babel-preset'],
+  presets: ['module:@react-native/babel-preset'],
   plugins: ['react-native-reanimated/plugin'],
 };
 

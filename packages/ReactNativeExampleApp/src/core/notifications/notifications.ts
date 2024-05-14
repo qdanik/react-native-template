@@ -1,4 +1,5 @@
 import notifee, { AuthorizationStatus, Event, EventType } from '@notifee/react-native';
+import { isEqual } from 'lodash';
 
 import { logger } from '../logger';
 
@@ -8,9 +9,9 @@ export const requestPermission = async (): Promise<{
   isDenied: boolean;
 }> => {
   const settings = await notifee.requestPermission();
-  const isEnable = settings.authorizationStatus === AuthorizationStatus.AUTHORIZED;
-  const isProvisional = settings.authorizationStatus === AuthorizationStatus.PROVISIONAL;
-  const isDenied = settings.authorizationStatus === AuthorizationStatus.DENIED;
+  const isEnable = isEqual(settings.authorizationStatus, AuthorizationStatus.AUTHORIZED);
+  const isProvisional = isEqual(settings.authorizationStatus, AuthorizationStatus.PROVISIONAL);
+  const isDenied = isEqual(settings.authorizationStatus, AuthorizationStatus.DENIED);
 
   logger.info(`Notification status: ${settings.authorizationStatus}`);
 
@@ -51,6 +52,8 @@ export const initializeNotifications = async () => {
   const { isEnable } = await requestPermission();
 
   if (!isEnable) {
+    logger.info('Notifications disabled');
+
     return;
   }
 

@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
   },
 });
 
-function App(): JSX.Element {
+function App(): React.JSX.Element {
   useNotificationsService();
 
   return (

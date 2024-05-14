@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { initializeNotifications, logger } from '../core';
+import { initializeNotifications, logger } from '../../core';
 
 export const useNotificationsService = () => {
   useEffect(() => {
