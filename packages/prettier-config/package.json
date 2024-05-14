@@ -1,0 +1,13 @@
+{
+  "name": "@my-app/prettier-config",
+  "version": "1.0.1",
+  "description": "Shared Prettier configuration",
+  "main": "./prettier-config.json",
+  "type": "module",
+  "devDependencies": {
+    "prettier": "3.2.5"
+  },
+  "peerDependencies": {
+    "prettier": ">=3"
+  }
+}

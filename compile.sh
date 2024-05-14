@@ -1,1 +1,0 @@
-.\android\gradlew assembleRelease --console plain && move .\android\app\build\outputs\apk\app-release.apk .\android.apk

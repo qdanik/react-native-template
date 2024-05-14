@@ -1,1 +1,6 @@
-{}
+{
+  "ignore_dirs": [
+    "packages/ReactNativeExampleApp/ios",
+    "packages/ReactNativeExampleApp/android"
+  ]
+}
